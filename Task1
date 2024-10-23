@@ -8,12 +8,9 @@ class Student {
         console.log(`Name: ${this.name}, Grade: ${this.grade}`);
     }
 }
-
 const student1 = new Student("Bhuvan", "A");
 student1.printInfo();
-
-const student2 = new Student("Alice", "B");
+const student2 = new Student("Chethan", "B");
 student2.printInfo();
-
-const student3 = new Student("John", "C");
+const student3 = new Student("Veena", "C");
 student3.printInfo();
