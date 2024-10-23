@@ -1,0 +1,13 @@
+class BaseClass{
+    constructor(){
+    console.log("Base constructor")
+    }
+}
+class DerivedClass extends BaseClass{
+    constructor(){
+    super();
+    console.log("Derived Constructor")
+    }
+}
+const name = new BaseClass()
+const name1 = new DerivedClass()
