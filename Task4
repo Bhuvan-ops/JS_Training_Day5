@@ -1,0 +1,29 @@
+class Shape {
+    area() {
+        return 0;
+    }
+}
+class Circle extends Shape {
+    constructor(radius) {
+        super();
+        this.radius = radius;
+    }
+    area() {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+class Rectangle extends Shape {
+    constructor(length, breadth) {
+        super();
+        this.length = length;
+        this.breadth = breadth;
+    }
+    area() {
+        return this.length * this.breadth;
+    }
+}
+const myCircle = new Circle(5);
+console.log("Area of Circle:", myCircle.area());
+
+const myRectangle = new Rectangle(4, 6);
+console.log("Area of Rectangle:", myRectangle.area());
