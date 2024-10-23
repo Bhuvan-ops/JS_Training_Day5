@@ -1,0 +1,19 @@
+class Student {
+    constructor(name, grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+
+    printInfo() {
+        console.log(`Name: ${this.name}, Grade: ${this.grade}`);
+    }
+}
+
+const student1 = new Student("Bhuvan", "A");
+student1.printInfo();
+
+const student2 = new Student("Alice", "B");
+student2.printInfo();
+
+const student3 = new Student("John", "C");
+student3.printInfo();
