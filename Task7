@@ -1,0 +1,29 @@
+class Product {
+    #name;
+    #price;
+    constructor(name, price) {
+        this.#name = name;
+        this.#price = price;
+    }
+    get name() {
+        return this.#name;
+    }
+    set name(newName) {
+        this.#name = newName;
+    }
+    get price() {
+        return this.#price;
+    }
+    set price(newPrice) {
+        this.#price = newPrice;
+    }
+}
+const product = new Product("Laptop", 15000);
+console.log("Product Name: " + product.name + "\nProduct Price: " + product.price);
+
+product.name = "Gaming Laptop";
+product.price = 30000;
+
+console.log("Updated Product Name: " + product.name + "\nUpdated Product Price: " + product.price);
+
+
