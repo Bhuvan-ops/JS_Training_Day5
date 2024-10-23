@@ -1,0 +1,12 @@
+class Book {
+    constructor(title,author,yearPublished) {
+        this.title = title;
+        this.author = author;
+        this.yearPublished = yearPublished;
+    }
+    printInfo() {
+        console.log(`Title: ${this.title}, Author: ${this.author}, Year Published: ${this.yearPublished}`);
+    }
+}
+const book1 = new Book("Malgudi Days", "R.K. Narayan", 1943);
+book1.printInfo();
