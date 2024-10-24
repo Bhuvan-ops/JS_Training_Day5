@@ -1,0 +1,86 @@
+class Product {
+    constructor(name, price, category) {
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    displayInfo() {
+        console.log(`Name: ${this.name}, Price: ${this.price}, Category: ${this.category}`);
+    }
+}
+
+class Electronic extends Product {
+    constructor(name, price, category, warrantyPeriod) {
+        super(name, price, category);
+        this.warrantyPeriod = warrantyPeriod;
+    }
+
+    displayInfo() {
+        super.displayInfo();
+        console.log(`Warranty Period: ${this.warrantyPeriod}`);
+    }
+}
+
+class Clothing extends Product {
+    constructor(name, price, category, size, material) {
+        super(name, price, category);
+        this._size = size;
+        this.material = material;
+    }
+
+    displayInfo() {
+        super.displayInfo();
+        console.log(`Size: ${this.size}`);
+        console.log(`Material: ${this.material}`);
+    }
+
+    get size() {
+        return this._size;
+    }
+
+    set size(newSize) {
+        this._size = newSize;
+    }
+}
+
+class ShoppingCart {
+    static totalItems = 0;
+    #_products = [];
+
+    addProduct(product) {
+        this.#_products.push(product);
+        ShoppingCart.totalItems++;
+    }
+
+    removeProduct(productName) {
+        for (let i = 0; i < this.#_products.length; i++) {
+            if (this.#_products[i].name === productName) {
+                this.#_products.splice(i, 1);
+                ShoppingCart.totalItems--;
+                break;
+            }
+        }
+    }
+
+    calculateTotal() {
+        return ShoppingCart.totalItems;
+    }
+}
+
+const laptop = new Electronic("Asus", 34999, "Gaming Laptop", 3);
+const shirt = new Clothing("H&M", 1899, "Jackets", "L", "Cotton");
+shirt.size = "M";
+console.log(shirt);
+
+const smartphone = new Electronic("Samsung", 59999, "Smartphone", 2);
+const shoes = new Clothing("Nike", 2999, "Sneakers", "M", "Leather");
+
+const myCart = new ShoppingCart();
+myCart.addProduct(laptop);
+myCart.addProduct(shirt);
+myCart.addProduct(new Clothing("H&M", 1899, "Jackets", "L", "Cotton"));
+
+console.log("The total number of items in your cart: " + myCart.calculateTotal());
+myCart.removeProduct("H&M");
+console.log("The total number of items in your cart: " + myCart.calculateTotal());
